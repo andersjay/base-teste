@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+</head>
+<body>
+    <div id="actionmenu">
+        <div id="topo">
+            <b>BANK</b>
+            <z id="horario">SEPTEMBER | <span>18:25</span></z>
+        </div>
+        
+        <div id="container">
+            <div id="menu">
+                <button id="logo"><img src="https://cdn.discordapp.com/attachments/693523395010101340/769640153248694302/logoronystore.png" alt=""></button>
+                <div id="menuAberto" style="display: none;">
+                    <button class="botaoEsquerdo" id="saque"><img src="https://cdn.discordapp.com/attachments/712813091674390560/763525005765509170/sacar.png" alt=""></button>
+                    <button class="botaoEsquerdo" id="deposito"><img src="https://cdn.discordapp.com/attachments/712813091674390560/763525002934091776/depositar.png" alt=""></button>
+                    <button class="botaoEsquerdo" id="transferencia"><img src="https://cdn.discordapp.com/attachments/712813091674390560/763525002175578142/trasnferir.png" alt=""></button>
+                    <button class="botaoEsquerdo" id="multas"><img src="https://cdn.discordapp.com/attachments/712813091674390560/763525004175605760/multas.png" alt=""></button>
+                </div>
+                <div id="direito">BANK ®</div>
+            </div>
+
+            <div id="central">
+                <div id="centralTopo"><span>Olá <b id="name">Rony</b></span> | Bem vindo ao Banco</div>
+                <div id="centralCartao">
+                    <div id="cartao1">
+                        <div class="saldo">
+                            <img src="https://cdn.discordapp.com/attachments/712813091674390560/763100154815053834/atm.png" alt="">
+                            <div class="saldoInfo">
+                                SALDO <span>BANCARIO</span><br>
+                                <z id="saldo">$ 186.500,00</z>
+                            </div>
+                            <div class="footerCartao">
+                                <b id="card"><z>**** **</z>95 8852</b>
+                                <img src="https://cdn.discordapp.com/attachments/708215158606135306/763098182267568179/visa.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cartao2">
+                        <div class="saldo">
+                            <img src="https://cdn.discordapp.com/attachments/712813091674390560/763100154815053834/atm.png" alt="">
+                            <div class="saldoInfo">
+                                SALDO <span>EM MÃOS</span><br>
+                                <z id="carteira">$ 186.500,00</z>
+                            </div>
+                            <div class="footerCartao">
+                                <b id="card2"><z>**** **</z>95 8852</b>
+                                <img src="https://cdn.discordapp.com/attachments/708215158606135306/763098182267568179/visa.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="multa">
+                        MULTAS PENDENTES: <span id="multasamount">$ 0</span> 
+                    </div>
+                </div>
+                <div id="valores"> 
+                    <div id="inserir">
+                        <div id="inserirTransf">
+                            <z>INSIRA O VALOR</z><br>
+                            <input id="valor" type="number" min="1" oninput="this.value = Math.abs(this.value)" placeholder="$ 1.000,00">
+                            <br>    
+                            <div id="id" style="display: none;">
+                                <z>PASSAPORTE</z><br>
+                                <input id="passaporte" type="number" min="1" oninput="this.value = Math.abs(this.value)" placeholder="1">
+                            </div>
+                        </div>
+                    </div>
+                    <i>VALORES RAPIDOS</i>
+                    <div id="rapidos" data-action="b">
+                        <button  class="botaoRapidos" data-value="1000">1.000,00</button>
+                        <button  class="botaoRapidos" data-value="10000">10.000,00</button>
+                        <button  class="botaoRapidos" data-value="50000">50.000,00</button>
+                    </div>
+                    <br>
+                    <button id="pagar">PAGAR</button>
+                </div>
+                <div id="historico">
+                    &nbsp; &nbsp; &nbsp; &nbsp;HISTORICO DE TRANSAÇÕES &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <div id="lista">
+                        <!-- <div id="naoSei">
+                            <div id="evento">EVENTO SAQUE</div>
+                            <div id="mensagem">Foi sacado 12.000,00 da sua conta, e seu saldo ficou em 159.500,00</div>
+                        </div>
+                        <div id="naoSei">
+                            <div id="evento">EVENTO SAQUE</div>
+                            <div id="mensagem">Foi sacado 12.000,00 da sua conta, e seu saldo ficou em 159.500,00</div>
+                        </div>
+                        <div id="naoSei">
+                            <div id="evento">EVENTO SAQUE</div>
+                            <div id="mensagem">Foi sacado 12.000,00 da sua conta, e seu saldo ficou em 159.500,00</div>
+                        </div>
+                        <div id="naoSei">
+                            <div id="evento">EVENTO SAQUE</div>
+                            <div id="mensagem">Foi sacado 12.000,00 da sua conta, e seu saldo ficou em 159.500,00</div>
+                        </div>
+                        <div id="naoSei">
+                            <div id="evento">EVENTO SAQUE</div>
+                            <div id="mensagem">Foi sacado 12.000,00 da sua conta, e seu saldo ficou em 159.500,00</div>
+                        </div>
+                        <div id="naoSei">
+                            <div id="evento">EVENTO SAQUE</div>
+                            <div id="mensagem">Foi sacado 12.000,00 da sua conta, e seu saldo ficou em 159.500,00</div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

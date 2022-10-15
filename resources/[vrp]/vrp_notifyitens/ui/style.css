@@ -1,0 +1,54 @@
+html {
+	overflow-x: hidden !important;
+	overflow-y: hidden !important;
+	background-color: transparent !important;
+}
+
+body {
+	background-color: transparent !important;
+}
+
+#notifyitens {
+	left: 50%;
+	bottom: 3%;
+	position: absolute !important;
+	transform: translate(-50%,-50%);
+}
+
+#showitem {
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin-top: 10px;
+	margin-right: 10px;
+	border-radius: 3px;
+	background: rgba(0,0,0,0.5);
+}
+
+#showitem b {
+	float: left;
+	width: 80px;
+	height: 22px;
+	color: #a9a9a9;
+	font-size: 11px;
+	font-weight: 300;
+	margin-top: 70px;
+	overflow: hidden;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: arial;
+	white-space: nowrap;
+	padding: 8px 10px 0;
+	text-overflow: ellipsis;
+	text-shadow: 1px 1px #000;
+	border-radius: 0 0 3px 3px;
+	background: rgba(0,0,0,0.6);
+}
+
+sucesso {
+	color: rgba(80,120,20,1.0);
+}
+
+negado {
+	color: rgba(160,25,25,1.0);
+}

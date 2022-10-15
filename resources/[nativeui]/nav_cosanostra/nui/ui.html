@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<link href="ui.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<div id="actionmenu">
+			<div id="mainmenu">
+				<button class="menuoption" data-sub="armamentos">Armamentos</button>
+				<button class="menuoption" data-sub="municoes">Munições</button>
+				<button class="menuoption" data-action="fechar">Fechar</button>
+			</div>
+
+			<div data-parent="mainmenu" id="armamentos" style="display: none;">
+				<button class="menuoption" data-action="armamentos-comprar-tec9"><l>Tec-9</l><r>1.500</r></button>
+				<button class="menuoption" data-action="armamentos-comprar-fiveseven"><l>FN Five Seven</l><r>3.000</r></button>
+				<button class="menuoption" data-action="armamentos-comprar-ak103"><l>AK-103</l><r>5.000</r></button>
+				<button class="menuoption" data-action="armamentos-comprar-thompson"><l>Thompson</l><r>4.000</r></button>
+				<button class="menuoption" data-action="armamentos-comprar-mtar21"><l>MTAR-21</l><r>3.000</r></button>
+				<button class="menuoption" data-action="armamentos-comprar-aks74u"><l>AKS-74U</l><r>4.000</r></button>
+				<button class="menuoption" data-action="armamentos-comprar-mpx"><l>MPX</l><r>4.000</r></button>
+			</div>
+
+			<div data-parent="mainmenu" id="municoes" style="display: none;">
+				<button class="menuoption" data-action="municoes-comprar-tec9"><l>Tec-9</l><r>500</r></button>
+				<button class="menuoption" data-action="municoes-comprar-fiveseven"><l>FN Five Seven</l><r>700</r></button>
+				<button class="menuoption" data-action="municoes-comprar-ak103"><l>AK-103</l><r>1.500</r></button>
+				<button class="menuoption" data-action="municoes-comprar-thompson"><l>Thompson</l><r>500</r></button>
+				<button class="menuoption" data-action="municoes-comprar-mtar21"><l>MTAR-21</l><r>800</r></button>
+				<button class="menuoption" data-action="municoes-comprar-aks74u"><l>AKS-74U</l><r>1.000</r></button>
+				<button class="menuoption" data-action="municoes-comprar-mpx"><l>MPX</l><r>1.000</r></button>
+			</div>
+			
+		</div>
+		<script src="ui.js" type="text/javascript"></script>
+	</body>
+</html>
