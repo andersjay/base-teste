@@ -1,0 +1,4 @@
+artifacts/
+server.cfg
+cache/
+\[mysql\]/database.sql
