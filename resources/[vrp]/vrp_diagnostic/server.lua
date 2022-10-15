@@ -36,7 +36,6 @@ local bones = {
 	[45509] = "Braço Esquerdo",
 	[61163] = "Antebraço Esquerdo",
 	[18905] = "Mão Esquerda",
-	[18905] = "Mão Esquerda",
 	[26610] = "Dedo Esquerdo",
 	[4089] = "Dedo Esquerdo",
 	[4090] = "Dedo Esquerdo",

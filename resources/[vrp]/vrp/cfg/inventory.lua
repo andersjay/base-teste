@@ -359,10 +359,8 @@ cfg.chestweight = {
 		["tulip"] = 60,
 		["vamos"] = 60,
 		["deathbike"] = 15,
-		["shotaro"] = 15,
 
-		-- VEICULOS MODS
-
+		-- VEÍCULOS MOD
 		["audirs6"] = 10,
 		["audirs7"] = 10,
 		["bmwm3f80"] = 10,
