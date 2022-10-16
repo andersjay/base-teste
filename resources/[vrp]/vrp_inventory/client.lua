@@ -47,9 +47,19 @@ AddEventHandler('cloneplates',function()
     local clonada = GetVehicleNumberPlateText(vehicle)
     if IsEntityAVehicle(vehicle) then
         PlateIndex = GetVehicleNumberPlateText(vehicle)
-        SetVehicleNumberPlateText(vehicle,"CLONADA")
+					local characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+					local res = ''
+
+					local primaryTextPlate = math.floor(10 + math.random() * 90)
+					local char1 = res .. string.char(math.random(97,122))
+					local char2 = res .. string.char(math.random(97,122))
+					local char3 = res .. string.char(math.random(97,122))
+					local secondaryTextPlate = char1 .. char2 .. char3
+					local tirtyTextPlate = math.floor(100 + math.random() * 900)
+					local textPlateFinnaly = primaryTextPlate .. secondaryTextPlate .. tirtyTextPlate
+        SetVehicleNumberPlateText(vehicle,textPlateFinnaly)
         FreezeEntityPosition(vehicle,false)
-        if clonada == CLONADA then 
+        if clonada == data then 
             SetVehicleNumberPlateText(vehicle,PlateIndex)
             PlateIndex = nil
         end

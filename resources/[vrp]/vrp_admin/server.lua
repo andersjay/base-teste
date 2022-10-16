@@ -49,6 +49,7 @@ end)
 -- ITEM
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("item",function(source,args,rawCommand)
+	print('usou', args[1], args[2])
 	local user_id = vRP.getUserId(source)
 	local identity = vRP.getUserIdentity(user_id)
 	if user_id then
