@@ -1,53 +1,117 @@
------------------------------------------------------------------------------------------------------------------------------------------
--- GETHEALTH
------------------------------------------------------------------------------------------------------------------------------------------
+AddEventHandler("nation_paintball:updateSurvival", function(bool)
+	inPaintball = bool
+end)
+
+function tvRP.varyHealth(variation)
+	local ped = PlayerPedId()
+	local n = math.floor(GetEntityHealth(ped)+variation)
+	SetEntityHealth(ped,n)
+end
+
+--[ GETHEALTH ]--------------------------------------------------------------------------------------------------------------------------
+
 function tvRP.getHealth()
 	return GetEntityHealth(PlayerPedId())
 end
------------------------------------------------------------------------------------------------------------------------------------------
--- SETHEALTH
------------------------------------------------------------------------------------------------------------------------------------------
+
+--[ SETHEALTH ]--------------------------------------------------------------------------------------------------------------------------
+
 function tvRP.setHealth(health)
 	SetEntityHealth(PlayerPedId(),parseInt(health))
 end
------------------------------------------------------------------------------------------------------------------------------------------
--- SETFRIENDLYFIRE
------------------------------------------------------------------------------------------------------------------------------------------
+
+--[ SETFRIENDLYFIRE ]--------------------------------------------------------------------------------------------------------------------
+
 function tvRP.setFriendlyFire(flag)
 	NetworkSetFriendlyFireOption(flag)
 	SetCanAttackFriendly(PlayerPedId(),flag,flag)
 end
------------------------------------------------------------------------------------------------------------------------------------------
--- NOCAUTEVAR
------------------------------------------------------------------------------------------------------------------------------------------
-local nocauteado = false
-local deathtimer = 500
------------------------------------------------------------------------------------------------------------------------------------------
--- NOCAUTEADO
------------------------------------------------------------------------------------------------------------------------------------------
+
+--[ FOME & SEDE ]-------------------------------------------------------------------------------------------------------------------------
+
+function tvRP.sedeFome()
+	vRPserver.varyHunger(-100)
+end
+
 Citizen.CreateThread(function()
 	while true do
-		local rsTD = 1000
+		Citizen.Wait(6000)
+		if IsPlayerPlaying(PlayerId()) then
+			local ped = PlayerPedId()
+			local vthirst = 0.8
+			local vhunger = 0.5
+
+			if IsPedOnFoot(ped) then
+				local factor = math.min(tvRP.getSpeed(),10)
+
+				vthirst = vthirst+1.0*factor
+				vhunger = vhunger+0.2*factor
+			end
+
+			if IsPedInMeleeCombat(ped) then
+				vthirst = vthirst+10
+				vhunger = vhunger+5
+			end
+
+			if IsPedHurt(ped) or IsPedInjured(ped) then
+				vthirst = vthirst+2
+				vhunger = vhunger+1
+			end
+
+			if vthirst > 0 then
+				vRPserver.varyThirst(vthirst/12.0)
+			end
+
+			if vhunger > 0 then
+				vRPserver.varyHunger(vhunger/12.0)
+			end
+
+		end
+	end
+end)
+
+--[ NOCAUTEVAR ]-------------------------------------------------------------------------------------------------------------------------
+
+local nocauteado = false
+local deathtimer = 900
+
+--[ NOCAUTEADO ]-------------------------------------------------------------------------------------------------------------------------
+
+Citizen.CreateThread(function()
+	while true do
+		local idle = 1000
 		local ped = PlayerPedId()
-		if GetEntityHealth(ped) <= 101 and deathtimer >= 0 then
-			rsTD = 4
+		if not inPaintball and GetEntityHealth(ped) <= 101 and deathtimer >= 0 then
+			idle = 5
 			if not nocauteado then
 				local x,y,z = table.unpack(GetEntityCoords(ped))
 				NetworkResurrectLocalPlayer(x,y,z,true,true,false)
-				deathtimer = 500
+
+				deathtimer = 900
 				nocauteado = true
 				vRPserver._updateHealth(101)
+
 				SetEntityHealth(ped,101)
 				SetEntityInvincible(ped,true)
+
 				if IsPedInAnyVehicle(ped) then
 					TaskLeaveVehicle(ped,GetVehiclePedIsIn(ped),4160)
 				end
+
+
+
+				
+				--exports['pma-voice']:removePlayerFromRadio()
+				--exports['pma-voice']:setMute(true)
+				TriggerEvent("radio:outServers")
+				TriggerEvent("hud:setShow", false)
 			else
 				if deathtimer > 0 then
-					drawTxt("VOCÊ TEM ~r~"..deathtimer.." ~w~SEGUNDOS DE VIDA",4,0.5,0.93,0.50,255,255,255,255)
+					drawTxt("VOCE TEM ~r~"..deathtimer.." ~w~SEGUNDOS DE VIDA, AGUARDE POR SOCORRO MÉDICO",4,0.5,0.92,0.35,255,255,255,255)
 				else
-					drawTxt("PRESSIONE ~g~E ~w~PARA VOLTAR AO AÉROPORTO OU AGUARDE UM PARAMÉDICO",4,0.5,0.93,0.50,255,255,255,255)
+					drawTxt("PRESSIONE ~g~E ~w~PARA VOLTAR AO AEROPORTO OU AGUARDE POR SOCORRO MÉDICO",4,0.5,0.92,0.35,255,255,255,255)
 				end
+				SetFollowPedCamViewMode(4)
 				SetPedToRagdoll(ped,1000,1000,0,0,0,0)
 				SetEntityHealth(ped,101)
 				BlockWeaponWheelThisFrame()
@@ -83,7 +147,6 @@ Citizen.CreateThread(function()
 				DisableControlAction(0,189,true)
 				DisableControlAction(0,190,true)
 				DisableControlAction(0,243,true)
-				--DisableControlAction(0,245,true)
 				DisableControlAction(0,257,true)
 				DisableControlAction(0,263,true)
 				DisableControlAction(0,264,true)
@@ -97,52 +160,56 @@ Citizen.CreateThread(function()
 				DisableControlAction(0,344,true)
 			end
 		end
-		Wait(rsTD)
+		Citizen.Wait(idle)
 	end
 end)
------------------------------------------------------------------------------------------------------------------------------------------
--- BUTTONTIMER
------------------------------------------------------------------------------------------------------------------------------------------
+
+--[ BUTTONTIMER ]------------------------------------------------------------------------------------------------------------------------
+
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(5)
+        local idle = 1000
         local ped = PlayerPedId()
-        if GetEntityHealth(ped) <= 101 and deathtimer <= 0 then
-            if IsControlJustPressed(0,38) then
-                TriggerEvent("resetBleeding")
+		if not inPaintball and GetEntityHealth(ped) <= 101 and deathtimer <= 0 then
+			idle = 5
+			if IsControlJustPressed(0,38) then
+				TriggerEvent("resetBleeding")
                 TriggerEvent("resetDiagnostic")
                 TriggerServerEvent("clearInventory")
-                deathtimer = 500
+                deathtimer = 900
                 nocauteado = false
                 ClearPedBloodDamage(ped)
                 SetEntityInvincible(ped,false)
                 DoScreenFadeOut(1000)
-                SetEntityHealth(ped,400)
-                SetPedArmour(ped,0)
+                SetEntityHealth(ped,240)
+				TriggerEvent("rainda",0)
                 Citizen.Wait(1000)
-                SetEntityCoords(PlayerPedId(),317.97+0.0001,-597.49+0.0001,43.3+0.0001,1,0,0,1)
+                SetEntityCoords(PlayerPedId(),-449.2,-340.9,34.51+0.0001,1,0,0,1)
                 FreezeEntityPosition(ped,true)
                 SetTimeout(5000,function()
                     FreezeEntityPosition(ped,false)
                     Citizen.Wait(1000)
                     DoScreenFadeIn(1000)
                 end)
+				TriggerEvent("hud:setShow", true)
+				--exports['pma-voice']:setMute(false)
             end
-        end
+		end
+		Citizen.Wait(idle)
     end
 end)
------------------------------------------------------------------------------------------------------------------------------------------
--- HEALTHRECHARGE
------------------------------------------------------------------------------------------------------------------------------------------
+
+--[ HEALTHRECHARGE ]---------------------------------------------------------------------------------------------------------------------
+
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(100)
+		Citizen.Wait(1000)
 		SetPlayerHealthRechargeMultiplier(PlayerId(),0)
 	end
 end)
------------------------------------------------------------------------------------------------------------------------------------------
--- DEATHTIMER
------------------------------------------------------------------------------------------------------------------------------------------
+
+--[ DEATHTIMER ]-------------------------------------------------------------------------------------------------------------------------
+
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1000)
@@ -151,9 +218,9 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
------------------------------------------------------------------------------------------------------------------------------------------
--- DRAWTXT
------------------------------------------------------------------------------------------------------------------------------------------
+
+--[ DRAWTXT ]----------------------------------------------------------------------------------------------------------------------------
+
 function drawTxt(text,font,x,y,scale,r,g,b,a)
 	SetTextFont(font)
 	SetTextScale(scale,scale)
@@ -164,15 +231,15 @@ function drawTxt(text,font,x,y,scale,r,g,b,a)
 	AddTextComponentString(text)
 	DrawText(x,y)
 end
------------------------------------------------------------------------------------------------------------------------------------------
--- ISINCOMA
------------------------------------------------------------------------------------------------------------------------------------------
+
+--[ ISINCOMA ]---------------------------------------------------------------------------------------------------------------------------
+
 function tvRP.isInComa()
 	return nocauteado
 end
------------------------------------------------------------------------------------------------------------------------------------------
--- NETWORKRESSURECTION
------------------------------------------------------------------------------------------------------------------------------------------
+
+--[ NETWORKRESSURECTION ]----------------------------------------------------------------------------------------------------------------
+
 function tvRP.killGod()
 	nocauteado = false
 	local ped = PlayerPedId()
@@ -180,21 +247,24 @@ function tvRP.killGod()
 	NetworkResurrectLocalPlayer(x,y,z,true,true,false)
 	ClearPedBloodDamage(ped)
 	SetEntityInvincible(ped,false)
-	SetEntityHealth(ped,201)
+	SetEntityHealth(ped,110)
 	ClearPedTasks(ped)
 	ClearPedSecondaryTask(ped)
+	TriggerEvent("hud:setShow", true)
+	--exports['pma-voice']:setMute(false)
 end
------------------------------------------------------------------------------------------------------------------------------------------
--- NETWORKPRISON
------------------------------------------------------------------------------------------------------------------------------------------
+
+--[ NETWORKPRISON ]----------------------------------------------------------------------------------------------------------------------
+
 function tvRP.PrisionGod()
 	local ped = PlayerPedId()
 	if GetEntityHealth(ped) <= 101 then
 		nocauteado = false
 		ClearPedBloodDamage(ped)
 		SetEntityInvincible(ped,false)
-		SetEntityHealth(ped,201)
+		SetEntityHealth(ped,110)
 		ClearPedTasks(ped)
 		ClearPedSecondaryTask(ped)
+		TriggerEvent("hud:setShow", true)
 	end
 end

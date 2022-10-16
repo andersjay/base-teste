@@ -1,0 +1,129 @@
+html {
+	overflow-x: hidden !important;
+	overflow-y: hidden !important;
+	background: transparent !important;
+}
+
+body {
+	background: transparent !important;
+}
+
+#notifications {
+	left: 20px;
+	bottom: 200px;
+	display: flex;
+	color: #c6c6c6;
+	font-size: 13px;
+	max-width: 300px;
+	/* overflow: hidden; */
+	letter-spacing: .5px;
+	align-items: flex-start;
+	flex-direction: column;
+	position: absolute !important;
+	font-family: "Montserrat",Arial,Helvetica,sans-serif;
+}
+
+.timer-bar {
+    left: 10%;
+    padding: 0;
+    height: 4px;
+    width: 78%;
+	margin-top: 15px;
+	border-radius: 3px 3px 0 0;
+	position: absolute;
+    background-color: #fafafa;
+}
+
+#notifications b {
+	color: #fff;
+	font-weight: 300;
+}
+
+#notifications > div {
+	color: #c6c6c6;
+	margin-top: 10px;
+	line-height: 16px;
+	position: relative;
+	text-shadow: 1px 1px #000;
+	border-radius: 10px;
+	padding: 20px 25px 10px 60px;
+	border-bottom: 9px solid rgba(0, 0, 0, 0);
+	-webkit-box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.2); 
+	box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.2);
+}
+
+#sucess {
+	background: rgb(56,57,57,0.90) url("images/sucess.svg") no-repeat center left 16px;
+}
+#sucess > .timer-bar {
+	background: #27AE60;
+}
+
+
+#fracasso {
+	background: rgb(56,57,57,0.90) url("images/fracasso.svg") no-repeat center left 16px;
+}
+#fracasso > .timer-bar {
+	background: #E74C3C;
+}
+
+#alert {
+	background: rgb(56,57,57,0.90) url("images/alert.svg") no-repeat center left 16px;
+}
+#alert > .timer-bar {
+    background: #F1C40F;
+}
+
+#adm {
+	background: rgb(56,57,57,0.90) url("images/adm.svg") no-repeat center left 16px;
+}
+#adm > .timer-bar {
+	background: #988bc7;
+}
+
+#policia {
+	background: rgb(56,57,57,0.90) url("images/policia.svg") no-repeat center left 16px;
+}
+#policia > .timer-bar {
+	background: #3498DB;
+}
+
+#hospital {
+	background: rgb(56,57,57,0.90) url("images/hospital.svg") no-repeat center left 16px;
+}
+#hospital > .timer-bar {
+	background: #E74C3C;
+}
+
+#loc {
+	background: rgb(56,57,57,0.90) url("images/loc.svg") no-repeat center left 16px;
+}
+#loc > .timer-bar {
+    background: #3498DB;
+}
+
+#default {
+	line-height: 20px !important;
+	background: rgb(56,57,57,0.90);
+}
+#default line {
+	text-shadow: 0 0 transparent !important;
+	color: rgba(255, 255, 255, 0);
+}
+
+@keyframes disappear {
+    from {
+        opacity: 100%;
+        transform: translateX(0%);
+    }
+    to {
+        opacity: 0%;
+        transform: translateX(100%);
+    }
+}
+
+.disappear {
+    animation-name: disappear;
+    animation-duration: 600ms;
+    animation-fill-mode: backwards; 
+}
