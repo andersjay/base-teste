@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: #beb8b8; */
+    font-family: "Montserrat";
+    overflow: hidden;
+    /* background: #131313; */
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container .top {
+    position: absolute;
+    right: 2vw;
+    top: 1vw;
+    display: flex;
+}
+
+.top .styleme {
+    background: rgba(29, 29, 29, 0.65);
+    box-shadow: 0px 0px 8px rgba(29, 29, 29, 0.75);
+    filter: drop-shadow(0px 0px 2px rgba(29, 29, 29, 0.6));
+    border-radius: .3vw;
+    display: flex;
+    align-items: center;
+    padding: 1vw 0vw;
+    max-width: 11.7vw;
+    height: 4vh;
+}
+
+.top .radio {
+    background: rgba(29, 29, 29, 0.65);
+    box-shadow: 0px 0px 8px rgba(29, 29, 29, 0.75);
+    filter: drop-shadow(0px 0px 2px rgba(29, 29, 29, 0.6));
+    border-radius: .3vw;
+    display: none;
+    align-items: center;
+    padding: .5vw;
+    min-width: 2.5vw;
+    justify-content: center;
+    margin-left: .4vw;
+
+    height: 4vh;
+}
+
+.top .adress {
+    background: rgba(29, 29, 29, 0.65);
+    box-shadow: 0px 0px 8px rgba(29, 29, 29, 0.75);
+    filter: drop-shadow(0px 0px 2px rgba(29, 29, 29, 0.6));
+    border-radius: .3vw;
+    display: flex;
+    align-items: center;
+    padding: 1vw 0.5vw;
+    min-width: 8.5vw;
+    justify-content: center;
+    margin-left: .4vw;
+    height: 4vh;
+
+}
+
+.top .radio i {
+    font-size: .8vw;
+    color: #e0a303;
+
+}
+
+.top .radio h1 {
+    font-size: 1vw;
+    margin-left: .3vw;
+    color: #fff;
+    font-weight: 400;
+    font-weight: bold;
+}
+
+.top .adress h1 {
+    font-size: 0.8rem;
+    color: #fff;
+    font-weight: 400;
+    margin-left: .3vw;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 9vw;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.top .adress i {
+    font-size: .9vw;
+    color: #e0a303;
+
+}
+
+.top .item-top {
+    display: flex;
+    align-items: center;
+    margin-left: 1vw;
+}
+
+.top .item-top i {
+    font-size: .9vw;
+
+    color: #e0a303;
+}
+
+.top .styleme h1 {
+    font-size: 0.8rem;
+    margin-left: .3vw;
+    color: #fff;
+
+    font-weight: bold;
+
+}
+
+.item-top.time {
+    margin-right: 1vw;
+}
+
+.logo {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: -1.7vw;
+}
+
+.logo img {
+    width: 8vw;
+
+}
+
+.bottom {
+    position: absolute;
+    bottom: 2vw;
+    right: 2vw;
+}
+
+.bottom .bars {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bottom .bars .barContainer {
+    background: rgba(29, 29, 29, 0.65);
+    box-shadow: 0px 0px 8px rgba(29, 29, 29, 0.75);
+    filter: drop-shadow(0px 0px 2px rgba(29, 29, 29, 0.6));
+    width: 9vw;
+    height: 2vh;
+    margin-top: .5vw;
+    border-radius: 3px;
+    display: flex;
+
+}
+
+.bottom .bars .barFs {
+    background: rgba(29, 29, 29, 0.65);
+    box-shadow: 0px 0px 8px rgba(29, 29, 29, 0.75);
+    filter: drop-shadow(0px 0px 2px rgba(29, 29, 29, 0.6));
+    width: 4.2vw;
+    height: 3.5vh;
+    margin-top: .5vw;
+    border-radius: 3px;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.bottom .bars .barDisplay {
+    border-radius: 3px;
+}
+
+.bottom .bars .fsContainer {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.bottom .bars .health .barDisplay {
+    background: #E74C3C;
+    width: 80%;
+    height: 100%;
+}
+
+.bottom .bars .armour .barDisplay {
+    background: #95A5A6;
+    width: 80%;
+    height: 100%;
+}
+
+.bottom .bars .hunger .barDisplay {
+    background: #F39C12;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.bottom .bars .thirst .barDisplay {
+    background: #3498DB;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* Icons */
+
+.fa-burger,
+.fa-droplet {
+    color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    left: 1.6vw;
+    top: 1vh;
+
+}
+
+.fa-droplet {
+    left: 1.7vw;
+}
+
+/* Icons End */
+
+.bottom .carDetails {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.bottom .carDetails .detail {
+    background: rgba(29, 29, 29, 0.65);
+    border-radius: .2vw;
+    padding: .1vw .5vw;
+    height: 4vh;
+    min-width: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom .carDetails .detail h1 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2vw;
+}
+
+.bottom .carDetails .seatbelt {
+    display: none;
+}
+
+.bottom .carDetails .detail.cinto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4vh;
+    width: 2vw;
+}
+
+.bottom .carDetails .detail.cinto svg {
+    width: 2vw;
+}
+
+.bottom .carDetails .detail .items {
+    display: flex;
+    margin-left: .1vw;
+}
+
+.bottom .carDetails .detail i {
+    color: #fff;
+}
+
+.bottom .carDetails .detail .item {
+    width: .3vw;
+    height: 1.8vh;
+    transform: skew(-5deg);
+    margin-left: .1vw;
+    background: rgba(29, 29, 29, 0.65);
+    border-radius: .1vw;
+}
+
+.bottom .carDetails .detail .item.full {
+    background: #f39f02;
+}
+
+.ldBar {
+    width: 9vw !important;
+    height: 6vw !important;
+}
+
+.ldBar path.mainline {
+    stroke-width: 5;
+    stroke: #FFF;
+}
+
+.ldBar path.baseline {
+    stroke-width: 5;
+    stroke: rgba(255,255,255,0.65);
+}
+
+.ldBar-label {
+    display: none;
+}
+
+
+.bottom .velocimetro .detail {
+    /* background: rgba(29, 29, 29, 0.65); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 2vw;
+    left: 3.5vw;
+}
+
+.bottom .velocimetro .detail h1 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2vw;
+}
+
+.bottom .velocimetro .detail h2 {
+    color: #f1f1f1;
+    font-weight: 400;
+    font-size: .8vw;
+}
+
+.bottom .velocimetro .detail.tranca {
+    position: absolute;
+    left: 1.8vw;
+    top: 4vw;
+    color: #97d05f;
+}
+
+.bottom .velocimetro .detail.engine {
+    position: absolute;
+    left: 6.5vw;
+    top: 4.05vw;
+    color: #97d05f;
+}
+
+.showSpeedometer {
+    transform: translate3d(0, 0, 0);
+    animation: showSpeedometer 1s forwards
+}
+
+.hideSpeedometer {
+    transform: translate3d(0, 0, 0);
+    animation: hideSpeedometer 1s forwards
+}
+
+.normal-hud {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.normal-hud ion-icon {
+    position: absolute;
+    color: #f39f02;
+}
+
+.normal-hud span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    position: absolute;
+    color: #FFF;
+}
+
+.circleHud-container {
+    height: 100px;
+    width: 100%;
+}
+
+.svgCircle {
+    height: 40px;
+    width: 42px;
+}
+
+.svgCircle circle {
+    fill: none;
+    stroke-width: 4px;
+    stroke-dasharray: 100;
+    transition: all .5s;
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.circleFill {
+    stroke: #f39f02;
+    stroke-dashoffset: 100;
+}
+
+.circleBack {
+    stroke: rgba(29, 29, 29, 0.65);
+    box-shadow: 0px 0px 8px rgba(29, 29, 29, 0.75);
+    filter: drop-shadow(0px 0px 2px rgba(29, 29, 29, 0.6));
+    background: rgba(29, 29, 29, 0.65);
+
+    opacity: 1;
+    stroke-width: 3.2px;
+
+}
+
+.progressFill {
+
+    animation-name: arcoiris;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+
+}
+
+.progresso{
+    display:flex;
+    position: absolute;
+    width: 100%;
+
+    align-items: flex-start;
+    justify-content: center;
+    bottom:3vh;;
+
+}
+
+#progress {
+    display: none;
+}
+
+@keyframes showSpeedometer {
+    0% {
+        opacity: 0;
+        visibility: visible;
+        transform: translateX(5vh)
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes hideSpeedometer {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0)
+    }
+
+    100% {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(5vh)
+    }
+}
+
+@keyframes toRight {
+    0% {
+        transform: translateX(0vh)
+    }
+
+    100% {
+        transform: translateX(8vh)
+    }
+}
+
+.toRight {
+    transform: translate3d(0, 0, 0);
+    animation: toRight 1.5s forwards
+}
