@@ -93,8 +93,10 @@ local rotas = {
 function cRP.checkPermission(permissao)
 	local source = source
 	local user_id = vRP.getUserId(source)
+	print(permissao)
 	if user_id then
-		if vRP.hasPermission(user_id,permissao) then
+		if vRP.hasPermission(user_id,"juiz.permissao") then
+			
 			return true
 		else
 			TriggerClientEvent("Notify",source,"vermelho","Você não possui acesso.")

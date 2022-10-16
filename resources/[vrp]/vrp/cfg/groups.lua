@@ -7,7 +7,9 @@ cfg.groups = {
 		"mod.permissao",
 		"suporte.permissao",
 		"polpar.permissao",
-		"staff.permissao"
+		"staff.permissao",
+		"weapons.permissao"
+		
 	},
 	["Admin"] = {
 		"admin.permissao",

@@ -2,7 +2,8 @@ const imagesUrl = "http://localhost/imagens/itens/";
 
 const Routes = {
     load: function(title, items) {
-      $(".craft-items").html("");
+
+   
       $.each(items, function(index, element) {
           $(".craft-items").append(`
            <div class="item list-item"> 
@@ -22,7 +23,7 @@ const Routes = {
       Routes.callServer("selectRoute", { code });
     },
     callServer: function(endpoint, data, callback) {
-      $.post("http://routes/" + endpoint, JSON.stringify(data), callback);
+      $.post("http://rotas/" + endpoint, JSON.stringify(data), callback);
     }
 };
 
@@ -38,12 +39,16 @@ $('.close').on('click', function() {
     
 window.addEventListener("message", function(event) {
     var action = event.data.action;
+ 
     switch(action) {
       case "open":
         Routes.load(event.data.title, event.data.items);
+        console.log('abriu')
         $("body").show();
+
       break;
       case "exit":
+        console.log('fechou')
         $("body").hide();
       break;
     }

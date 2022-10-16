@@ -15,8 +15,7 @@ local routes = {
 	["weapons"] = {
 		title = "ARMAMENTOS", 
 		startPoints = {
-			{ x = 163.95, y = -1001.58, z = 29.35 }, 
-			{ x = 1400.05, y = 1142.81, z = 114.34 }
+			{ x = 159.03, y = -1006.51, z = 29.49 }
 		}
 	},
 	["vest"] = {
@@ -530,8 +529,7 @@ local currentPathPosition = 1
 -------------------------------------------------------------------------------------------------
 --[ MENU ]---------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------
-local menuactive = false
-
+local menuactive = true
 function ToggleActionMenu()
 	menuactive = not menuactive
     if menuactive then
@@ -546,6 +544,7 @@ end
 --[ BOTÕES ]-------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------
 RegisterNUICallback("selectRoute", function(data,cb)
+
     if data.code then
 			position = data.code
 	    TriggerServerEvent("routes:selectRoute", currentRoute, data.code)
@@ -578,8 +577,8 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		local AE = 500
-
 		for routeCode, route in pairs(routes) do
+		
 			for k, v in pairs(route.startPoints) do
 				local ped = PlayerPedId()
 				local x,y,z = table.unpack(GetEntityCoords(ped))
