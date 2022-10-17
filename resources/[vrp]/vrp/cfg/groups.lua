@@ -239,85 +239,334 @@ cfg.groups = {
 		},
 		"mecanico1-foradeservico.permissao"
 	},
-	
+
 	----- Ilegal | Drogas -----
 	
-	["Grove"] = {
+	['lidercv'] = { -- maconha 
 		_config = {
-			title = "Grove",
-			gtype = "job"
+			title = 'Chefe C.V',
+			gtype = 'job'
 		},
-		"grove.permissao"
+		-- 'vermelhos.permissao',  
+		-- 'turquia.permissao',
+		-- 'lidervermelhos.permissao',
+		'ilegal.permissao',
+		'cvlider.permissao',
+		'cv.permissao',
+		'contratar.permissao',
+		'weed.permissao'
 	},
-	["Ballas"] = {
+	['cv'] = {
 		_config = {
-			title = "Ballas",
-			gtype = "job"
+			title = 'Membro C.V',
+			gtype = 'job'
 		},
-		"ballas.permissao"
+		-- 'turquia.permissao'
+		'ilegal.permissao',
+		'cv.permissao',
+		'weed.permissao'
 	},
-	["Vagos"] = {
+
+	['pcc-lider'] = { -- ecstasy 
+	    _config = {
+		    title = 'Chefe P.C.C',
+		    gtype = 'job'
+	    },
+	    -- 'cinza.permissao',
+	    'ilegal.permissao',
+		'pcclider.permissao',
+	    'pcc.permissao',
+        'contratar.permissao',
+		'ecstasy.permissao'
+    },
+	['pcc'] = {
+	    _config = {
+		    title = 'Membro P.C.C',
+		    gtype = 'job'
+	    },
+	    -- 'cinza.permissao',
+	    'ilegal.permissao',
+	    'pcc.permissao',
+		'ecstasy.permissao'
+    },
+
+	['tcp-lider'] = { -- lsd
+	    _config = {
+		    title = 'Chefe T.C.P',
+		    gtype = 'job'
+	    },
+	    -- 'roxos.permissao',
+	    'ilegal.permissao',
+		'tcplider.permissao',
+	    'tcp.permissao',
+	    'contratar.permissao',
+		'lsd.permissao'
+	},
+	['tcp'] = {
+	    _config = {
+		    title = 'Membro T.C.P',
+		    gtype = 'job'
+	    },
+	    -- 'roxos.permissao'
+	    'ilegal.permissao',
+	    'tcp.permissao',
+		'lsd.permissao'
+	},
+
+	['ada-lider'] = { -- cocaína
+	    _config = {
+		    title = 'Chefe A.D.A',
+		    gtype = 'job'
+	    },
+		-- 'verdes.permissao',
+		-- 'israel.permissao',
+	    'ilegal.permissao',
+		'adalider.permissao',
+	    'ada.permissao',
+	    'contratar.permissao',
+		'cocaine.permissao'
+    },
+	['ada'] = {
 		_config = {
-			title = "Vagos",
-			gtype = "job"
+			title = 'Membro A.D.A',
+			gtype = 'job'
 		},
-		"vagos.permissao"
+		-- 'verdes.permissao',
+		-- 'israel.permissao',
+		'ilegal.permissao',
+		'ada.permissao',
+		'cocaine.permissao'
+	},
+
+	['cartel-lider'] = { -- metanfetamina
+	    _config = {
+		    title = 'Chefe Cartel',
+		    gtype = 'job'
+	    },
+		-- 'azul.permissao',
+	    'ilegal.permissao',
+		'cartellider.permissao',
+		'cartel.permissao',
+	    'contratar.permissao',
+		'meth.permissao'
+    },
+	['cartel'] = {
+		_config = {
+			title = 'Membro Cartel',
+			gtype = 'job'
+		},
+		-- 'azul.permissao',
+		'ilegal.permissao',
+		'cartel.permissao',
+		'meth.permissao'
 	},
 	
 	----- Ilegal | Armamentos & Munições -----
 	
-	["Bratva"] = {
-		_config = {
-			title = "Bratva",
-			gtype = "job"
-		},
-		"bratva.permissao"
+	['milicia-lider'] = { -- armas
+	_config = {
+		title = 'Chefe Milícia',
+		gtype = 'job'
 	},
-	["CosaNostra"] = {
+	'ilegal.permissao',
+	'milicialider.permissao',
+	'milicia.permissao',
+	'contratar.permissao',
+	'weapons.permissao'
+    },
+	['milicia'] = {
 		_config = {
-			title = "CosaNostra",
-			gtype = "job"
+			title = 'Membro Milícia',
+			gtype = 'job'
 		},
-		"cosanostra.permissao"
+		'ilegal.permissao',
+		'milicia.permissao',
+		'weapons.permissao'
+	},
+
+	['Yakuza-lider'] = { -- armas
+	    _config = {
+		    title = 'Chefe Yakuza',
+		    gtype = 'job'
+	    },
+	    'ilegal.permissao',
+	    'yakuzalider.permissao',
+	    'yakuza.permissao',
+		'contratar.permissao',
+	    'weapons.permissao'
+    },
+	['Yakuza'] = {
+		_config = {
+			title = 'Membro Yakuza',
+			gtype = 'job'
+		},
+		'ilegal.permissao',
+		'yakuza.permissao',
+		'weapons.permissao'
+	},
+
+	['canada-lider'] = { -- munição
+	    _config = {
+		    title = 'Chefe T.D.C',
+		    gtype = 'job'
+	    },
+		-- 'lockpick.permissao',
+	    -- 'ballas.permissao',
+	    'ilegal.permissao',
+		'canadalider.permissao',
+	    'canada.permissao',
+	    'contratar.permissao',
+	    'ammo.permissao'
+    },
+	['canada'] = { 
+		_config = {
+			title = 'Membro T.D.C',
+			gtype = 'job'
+		},
+		-- 'ballas.permissao',
+		-- 'lockpick.permissao',
+		'ilegal.permissao',
+		'canada.permissao',
+		'ammo.permissao'
+	},
+
+	['Motoclub-lider'] = { -- munição
+		_config = {
+			title = 'Chefe Motoclub',
+			gtype = 'job'
+		},
+		-- 'lockpick.permissao',
+		-- 'groove.permissao',
+		'ilegal.permissao',
+		'motoclublider.permissao',
+		'motoclub.permissao',
+		'contratar.permissao',
+		'ammo.permissao'
+	},
+	['Motoclub'] = {
+		_config = {
+			title = 'Membro Motoclub',
+			gtype = 'job'
+		},
+		-- 'lockpick.permissao',
+		-- 'groove.permissao',
+		'ilegal.permissao',
+		'motoclub.permissao',
+		'ammo.permissao'
 	},
 	
-	----- Ilegal | Desmanche & Corridas Ilegais -----
-	
-	["TheLost"] = {
+	----- Ilegal | Desmanche & Itens ilegais -----
+
+	['furious-lider'] = { -- desmanche
+	    _config = {
+		    title = 'Chefe Furious',
+		    gtype = 'job'
+	    },
+	    'ilegal.permissao',
+	    'furiouslider.permissao',
+	    'furious.permissao',
+	    'contratar.permissao',
+	    'desmanche.permissao'
+    },
+	['furious'] = {
 		_config = {
-			title = "TheLost",
-			gtype = "job"
+			title = 'Membro Furious',
+			gtype = 'job'
 		},
-		"thelost.permissao",
-		"corridas.ilegal"
+		'ilegal.permissao',
+		'furious.permissao',
+		'desmanche.permissao'
 	},
-	["Corredores"] = {
+
+	['dk-lider'] = { -- desmanche
+	    _config = {
+		    title = 'Chefe Drift King',
+		    gtype = 'job'
+	    },
+	    'ilegal.permissao',
+	    'dklider.permissao',
+	    'dk.permissao',
+		'contratar.permissao',
+		'desmanche.permissao'
+    },
+	['dk'] = {
 		_config = {
-			title = "Corredores",
-			gtype = "job"
+			title = 'Membro Drift King',
+			gtype = 'job'
 		},
-		"corredores.permissao",
-		"corridas.ilegal"
+		'ilegal.permissao',
+		'dk.permissao',
+		'desmanche.permissao'
+	},
+
+	['tdl-lider'] = { -- itens ilegais
+		_config = {
+			title = 'Chefe T.D.L',
+			gtype = 'job'
+		},
+		--'vagos.permissao',
+		'ilegal.permissao',
+		'tdllider.permissao',
+		'tdl.permissao',
+		'contratar.permissao',
+		'lockpick.permissao',
+		'smuggling.permissao'
+	},
+	['tdl'] = {
+		_config = {
+			title = 'Membro T.D.L',
+			gtype = 'job'
+		},
+		--'vagos.permissao',
+		'ilegal.permissao',
+		'tdl.permissao',
+		'lockpick.permissao',
+		'smuggling.permissao'
 	},
 	
 	----- Ilegal | Lavagem de dinheiro sujo -----
 	
-	["Tequila"] = {
+	['Vanilla-lider'] = {  -- lavagem
+	    _config = {
+		    title = 'Chefe Cassino',
+		    gtype = 'job'
+	    },
+	    'ilegal.permissao',
+		'vanillalider.permissao',
+	    'vanilla.permissao',
+		'contratar.permissao',
+	    'wash.permissao'
+    },
+	['Vanilla'] = {
 		_config = {
-			title = "Tequi-la-la",
-			gtype = "job"
+			title = 'Membro Cassino',
+			gtype = 'job'
 		},
-		"tequila.permissao",
-		"tequila.lavagem"
+		'ilegal.permissao',
+		'vanilla.permissao',
+		'wash.permissao'
 	},
-	["Vanilla"] = {
+
+	['Bahamas-lider'] = { -- lavagem
+	    _config = {
+		    title = 'Chefe Bahamas',
+		    gtype = 'job'
+	    },
+	    'ilegal.permissao',
+		'bahamaslider.permissao',
+		'bahamas.permissao',
+	    'contratar.permissao',
+	    'wash.permissao'
+    },
+	['Bahamas'] = {
 		_config = {
-			title = "Vanilla",
-			gtype = "job"
+			title = 'Membro Bahamas',
+			gtype = 'job'
 		},
-		"vanilla.permissao",
-		"vanilla.lavagem"
-	},
+		'ilegal.permissao',
+		'bahamas.permissao',
+		'wash.permissao'
+    },
 }
 
 cfg.users = {
