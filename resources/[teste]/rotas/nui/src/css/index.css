@@ -89,7 +89,7 @@ header .cart .icon {
   margin-right: 20px;
   align-items: center;
   justify-content: center;
-  background-color: #7159C1;
+  background-color: #e0a303;
 }
 
 header .cart .close {
@@ -150,8 +150,8 @@ section aside .item img {max-width: 45%;}
 section aside .item:last-child {margin: 0;}
 
 section aside .active {
-  background-color: #7159C1;
-  box-shadow: 0 0 0.1rem transparent, inset 0 0 0.1rem transparent, 0 0 .5rem #7159C1, inset 0 0 .5rem #7159C1
+  background-color: #e0a303;
+  box-shadow: 0 0 0.1rem transparent, inset 0 0 0.1rem transparent, 0 0 .5rem #e0a303, inset 0 0 .5rem #e0a303
 }
 
 section content {
@@ -168,7 +168,7 @@ section content .title {
   height: 30px;
   display: flex;
   font-size: 15px;
-  color: #7159C1;
+  color: #e0a303;
   letter-spacing: 2px;
   justify-content: space-between;
 }
@@ -183,11 +183,11 @@ section content .title {
   width: 150px;
   opacity: .5;
   align-items: center;
-  border: 1px solid #7159c154;
+  border: 1px solid #e0a30354;
 }
 
 .selected {
-  border: 1px solid #7159c154;
+  border: 1px solid #e0a30354;
 }
 
 .title .search input {
@@ -247,7 +247,7 @@ section .shop .item button {
 }
 
 section .shop .item button:hover {
-  background-color: #7159C1;
+  background-color: #e0a303;
 }
 
 section .shop .item button .icon {
@@ -261,7 +261,8 @@ section .shop .item button .icon {
   display: flex;
   align-items: center;
   transition: all .3s;
-  background-color: #3f3268;
+  background-color: #e0a303;
+  filter:brightness(0.9)
 }
 
 .item-photo img {
@@ -293,7 +294,7 @@ section content .shop .item small {
 }
 
 section content .shop .active {
-  border: 1px solid #7159C1;
+  border: 1px solid #e0a303;
 }
 
 .description {
@@ -329,7 +330,7 @@ section content .shop .active {
 }
 
 section content .shop .item:hover {
-  border: 1px solid #7159C1;
+  border: 1px solid #e0a303;
 }
 
 section content .shop .item::before {
@@ -361,7 +362,7 @@ section content .shop .item::before {
 }
 
 .car-actions .action:hover {
-  background-color: #7159C1;
+  background-color: #e0a303;
 }
 
 .car-actions img {
@@ -389,7 +390,7 @@ section content .shop .item::before {
 }
 
 ::-webkit-scrollbar{width:2px;border-radius:30px;background-color:transparent}
-::-webkit-scrollbar-thumb{border-radius:30px;background:#7159C1}
+::-webkit-scrollbar-thumb{border-radius:30px;background:#e0a303}
 
 @media only screen and (max-width: 1366px) { /* 1366x768 */
   main {

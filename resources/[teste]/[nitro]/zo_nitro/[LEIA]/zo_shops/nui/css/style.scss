@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300&family=Fjalla+One&family=Noto+Sans+HK:wght@300&family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap");
+
+$primary-color: #bbbbbb;
+$secondary-color: #818cab;
+$font-color: #fff;
+$font-color-dest: #f56e6d;
+$font-color-secondary: rgb(216, 216, 216);
+$bg-color: #212123;
+$bg-secondary-color: #2e2e30;
+$bg-terc-color: #222223;
+$heading-color: linear-gradient(90deg, #f56e6d, #f5bf6d);
+
+[data-theme="dark"] {
+    $primary-color: #9a97f3;
+    $secondary-color: #818cab;
+    $font-color: #e1e1ff;
+    $bg-color: #161625;
+    $heading-color: #818cab;
+}
+
+body,
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent !important;
+}
+
+#shop {
+    height: 90vh;
+    width: 40vw;
+    position: relative;
+    background-color: #1f1f21e0;
+    border-radius: 5px;
+    display: none;
+
+    nav {
+        height: 10%;
+        width: 100%;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+
+        ul {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+            align-items: center;
+
+            .end-nav {
+                display: flex;
+                align-items: center;
+
+                span {
+                    margin: 0 10px;
+                    color: $font-color-dest;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 24px !important;
+                }
+            }
+
+            li {
+                color: $font-color-dest;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: "Atkinson Hyperlegible", sans-serif;
+                font-weight: 550;
+
+                span {
+                    color: $font-color-secondary;
+                    font-size: 11px;
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+
+    .itens {
+        height: 85%;
+        width: 100%;
+        padding: 1.5rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        position: relative;
+        justify-items: center;
+        grid-row-gap: 1rem;
+
+        @media only screen and (max-width: 1100px) {
+            & {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .item {
+            background: linear-gradient(315deg, $bg-terc-color, $bg-secondary-color);
+            height: 35vh;
+            min-height: 200px;
+            width: 95%;
+            overflow: hidden;
+            border-radius: 5px;
+
+            .img-and-type {
+                height: 70%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+
+                p {
+                    color: $font-color;
+                    position: absolute;
+                    margin: 0;
+                    top: 5%;
+                    left: 5%;
+                    background: $heading-color;
+                    border-radius: 25px;
+                    font-size: 0.8vw;
+                    padding: 2.5px 10px;
+                }
+
+                img {
+                    width: 70%;
+                    height: 70%;
+                    object-fit: contain;
+                }
+            }
+
+            .infos {
+                height: 30%;
+                width: 100%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+
+                .text {
+                    p {
+                        margin: 0;
+                        width: 100%;
+                    }
+
+                    p:nth-child(1) {
+                        color: $font-color-dest;
+                        margin-top: 5px;
+                        font-family: "Atkinson Hyperlegible", sans-serif;
+                        font-weight: 550;
+                        font-size: 1.1vw;
+                    }
+
+                    p:nth-child(2) {
+                        font-size: 0.8vw;
+                        color: $font-color-secondary;
+                    }
+                }
+
+                button {
+                    position: absolute;
+                    bottom: 5px;
+                    right: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    outline: none;
+                    padding: 10px;
+                    background-color: $bg-secondary-color;
+                    color: $font-color-secondary;
+                    border: 1px solid $font-color-dest;
+                    box-shadow: #ffffff14 0px 0px 20px 0px;
+                    transition: all 0.4s;
+
+                    span {
+                        font-size: 65%;
+                    }
+
+                    &:hover {
+                        background-color: $font-color-dest;
+                    }
+                }
+            }
+        }
+    }
+
+    .theme-switch-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .theme-switch {
+        display: inline-block;
+        height: 34px;
+        position: relative;
+        width: 60px;
+        margin: 0;
+    }
+
+    .theme-switch input {
+        display: none;
+    }
+
+    .slider {
+        background-color: #ccc;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: 0.4s;
+        border-radius: 34px;
+    }
+
+    .theme-switch .round {
+        bottom: 4px;
+        height: 26px;
+        position: absolute;
+        transition: 0.4s;
+        width: 26px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .theme-switch .round span {
+        font-size: 100%;
+    }
+
+    .theme-switch.ligth .slider {
+        background: $secondary-color;
+    }
+
+    .theme-switch.ligth .round {
+        background: $primary-color;
+        color: $font-color;
+        left: 4px;
+    }
+
+    .theme-switch.dark .slider {
+        background: $secondary-color;
+    }
+
+    .theme-switch.dark .round {
+        background: $primary-color;
+        color: $font-color;
+        right: 4px;
+    }
+}
+
+@keyframes animationShowDialog {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $font-color-dest;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $font-color-dest;
+}
+
+::-webkit-scrollbar-track {
+    background: #2b2b2b;
+    border: 0.2px solid #2b2b2b;
+    border-radius: 10px;
+}
+
+.material-icons {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: "liga";
+}

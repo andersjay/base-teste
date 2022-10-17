@@ -165,7 +165,10 @@ local itemlist = {
 	["wammo|WEAPON_MACHINEPISTOL"] = { index = "m-tec9", nome = "M.Tec-9", type = "recarregar" },
 	["wammo|WEAPON_COMPACTRIFLE"] = { index = "m-aks", nome = "M.AKS", type = "recarregar" },
 	["wammo|WEAPON_CARBINERIFLE_MK2"] = { index = "m-mpx", nome = "M.MPX", type = "recarregar" },
-	["wammo|WEAPON_PETROLCAN"] = { index = "combustivel", nome = "Combustível", type = "recarregar" }
+	["wammo|WEAPON_PETROLCAN"] = { index = "combustivel", nome = "Combustível", type = "recarregar" },
+	["kitnitro"] = { index = "kitnitro", nome = "Kit Nitro", type = "usar" },
+	["garrafanitro"] = { index = "garrafanitro", nome = "Garrafa Nitro", type = "usar" },
+
 }
 
 function vRP.itemNameList(item)
