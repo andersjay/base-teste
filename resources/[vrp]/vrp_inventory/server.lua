@@ -553,25 +553,30 @@ function vRPN.useItem(itemName,type,ramount)
 				end
 			elseif itemName == "notebook" then
 				if vRPclient.isInVehicle(source) then
-					local vehicle,vnetid,placa,vname,lock,banned = vRPclient.vehList(source,7)
-					if vehicle and placa then
-						actived[user_id] = true
-						vGARAGE.freezeVehicleNotebook(source,vehicle)
-						TriggerClientEvent('cancelando',source,true)
-						TriggerClientEvent("progress",source,59500,"removendo rastreador")
-						SetTimeout(60000,function()
-							actived[user_id] = nil
-							TriggerClientEvent('cancelando',source,false)
-							local placa_user_id = vRP.getUserByRegistration(placa)
-							if placa_user_id then
-								local player = vRP.getUserSource(placa_user_id)
-								if player then
-									vGARAGE.removeGpsVehicle(player,vname)
-								end
-							end
-						end)
-					end
+					-- local vehicle,vnetid,placa,vname,lock,banned = vRPclient.vehList(source,7)
+					-- if vehicle and placa then
+					-- 	actived[user_id] = true
+					-- 	vGARAGE.freezeVehicleNotebook(source,vehicle)
+					-- 	TriggerClientEvent('cancelando',source,true)
+					-- 	TriggerClientEvent("progress",source,59500,"removendo rastreador")
+					-- 	SetTimeout(60000,function()
+					-- 		actived[user_id] = nil
+					-- 		TriggerClientEvent('cancelando',source,false)
+					-- 		local placa_user_id = vRP.getUserByRegistration(placa)
+					-- 		if placa_user_id then
+					-- 			local player = vRP.getUserSource(placa_user_id)
+					-- 			if player then
+					-- 				vGARAGE.removeGpsVehicle(player,vname)
+					-- 			end
+					-- 		end
+					-- 	end)
+					-- end
 				end
+				elseif itemName == "kitnitro" then
+					TriggerClientEvent('zo_install_nitro', source)
+				elseif itemName == "garrafanitro" then
+					TriggerClientEvent('zo_recharge_nitro', source)
+		
 			elseif itemName == "placa" then
 				if vRPclient.isInVehicle(source) then
 					if vRP.tryGetInventoryItem(user_id,"placa",1) then

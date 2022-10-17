@@ -89,6 +89,9 @@ cfg.items = {
 	["identidade"] = { "Identidade",0 },
 	["keycard"] = { "Keycard",0.1 },
 	["placa"] = { "Placa",1.0 },
+	["kitnitro"] = { "Kit Nitro", 5 },
+	["garrafanitro"] = { "Garrafa Nitro", 5 },
+
 }
 
 local function load_item_pack(name)
