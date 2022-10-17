@@ -8,7 +8,7 @@ cfg.groups = {
 		"suporte.permissao",
 		"polpar.permissao",
 		"staff.permissao",
-		"weapons.permissao"
+
 		
 	},
 	["Admin"] = {
@@ -29,7 +29,15 @@ cfg.groups = {
 		"suporte.permissao",
 		"staff.permissao"
 	},
-	
+
+	----- Orgs -----
+	["Armas"] = {
+		_config = {
+			title = "Armas",
+			gtype = "job"
+		},
+		"weapons.permissao"
+	},
 	----- VIPS -----
 	
 	["Platina"] = {

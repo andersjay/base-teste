@@ -16,6 +16,9 @@ local routes = {
 		title = "ARMAMENTOS", 
 		startPoints = {
 			{ x = 159.03, y = -1006.51, z = 29.49 }
+		},
+		perm = {
+			'weapons.permissao'
 		}
 	},
 	["vest"] = {
@@ -580,6 +583,7 @@ Citizen.CreateThread(function()
 		for routeCode, route in pairs(routes) do
 		
 			for k, v in pairs(route.startPoints) do
+			
 				local ped = PlayerPedId()
 				local x,y,z = table.unpack(GetEntityCoords(ped))
 				local bowz,cdz = GetGroundZFor_3dCoord(v.x,v.y,v.z)
@@ -588,7 +592,10 @@ Citizen.CreateThread(function()
 				if distance <= 1.5 then
 					DrawText3D(v.x, v.y, v.z, "~p~E~w~   ABRIR")
 					if IsControlJustPressed(0,38) then
-						if vSERVER.checkPermission(routeCode) then
+					local perm = routes[routeCode]['perm'][1]
+
+						if vSERVER.checkPermission(perm) then
+							
 							currentRoute = routeCode
 							ToggleActionMenu()
 						end

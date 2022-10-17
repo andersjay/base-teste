@@ -1,0 +1,1072 @@
+groups = {}
+
+groups.masterGroup = 'manager'
+
+groups.list = {
+	['prefeitura'] = {
+		_config = {
+			title = 'prefeitura',
+			gtype = 'publico'
+		},
+		'prefeitura.permissao'
+	},
+
+	['prefeito'] = {
+		_config = {
+			title = 'Prefeito(a)',
+			gtype = 'primario'
+		},
+		'prefeito.permissao'
+	},
+	['colaborador'] = {
+		_config = {
+			title = 'Colaborador(a)',
+			gtype = 'primario'
+		},
+		'colaborador.permissao'
+	},
+
+	--- STAFF
+	['manager'] = {
+		_config = {
+			title = 'Manager',
+			gtype = 'staff'
+		},
+		
+		"player.blips",
+		"player.noclip",
+		"player.teleport",
+		"player.secret",
+		"player.spec",		-- acesso ao /spec id (tela outros jogadores)
+		"player.wall",		-- acesso ao /wall (ver todos jogadores, id, vida, colete etc.)
+		"mqcu.permissao",   -- acesso ao /mqcu (deletar props/npcs/veiculos)
+        "admin.permissao",
+		'manager.permissao'
+	},
+	['off-manager'] = {
+		_config = {
+			title = 'Manager',
+			gtype = 'staff'
+		},
+		
+		"player.blips",
+		"player.noclip",
+		"player.teleport",
+		"player.secret",
+		"player.spec",		-- acesso ao /spec id (tela outros jogadores)
+		"player.wall",		-- acesso ao /wall (ver todos jogadores, id, vida, colete etc.)
+		"mqcu.permissao", 	-- acesso ao /mqcu (deletar props/npcs/veiculos)
+		"admin.permissao",
+		'off-manager.permissao'
+	},
+
+	['administrador'] = {
+		_config = {
+			title = 'Administrador(a)',
+			gtype = 'staff'
+		},
+		
+		"player.blips",
+		"player.noclip",
+		"player.teleport",
+		"player.secret",
+		"player.spec",		-- acesso ao /spec id (tela outros jogadores)
+		"player.wall",		-- acesso ao /wall (ver todos jogadores, id, vida, colete etc.)
+		"mqcu.permissao", 	-- acesso ao /mqcu (deletar props/npcs/veiculos)
+		"admin.permissao",
+		'administrador.permissao'
+	},
+	
+	['off-administrador'] = {
+		_config = {
+			title = 'Administrador(a)',
+			gtype = 'staff'
+		},
+		
+		"player.blips",
+		"player.noclip",
+		"player.teleport",
+		"player.secret",
+		"player.spec",		-- acesso ao /spec id (tela outros jogadores)
+		"player.wall",		-- acesso ao /wall (ver todos jogadores, id, vida, colete etc.)
+		"mqcu.permissao", 	-- acesso ao /mqcu (deletar props/npcs/veiculos)
+		"admin.permissao",
+		'off-administrador.permissao'
+	},
+
+	['moderador'] = {
+		_config = {
+			title = 'Moderador(a)',
+			gtype = 'staff'
+		},
+		
+		"player.blips",
+		"player.noclip",
+		"player.teleport",
+		"player.secret",
+		"player.spec",		-- acesso ao /spec id (tela outros jogadores)
+		"player.wall",		-- acesso ao /wall (ver todos jogadores, id, vida, colete etc.)
+		"mqcu.permissao", 	-- acesso ao /mqcu (deletar props/npcs/veiculos)
+		"admin.permissao",
+		'moderador.permissao'
+	},
+	['off-moderador'] = {
+		_config = {
+			title = 'Moderador(a)',
+			gtype = 'staff'
+		},
+		"player.blips",
+		"player.noclip",
+		"player.teleport",
+		"player.secret",
+		"player.spec",		-- acesso ao /spec id (tela outros jogadores)
+		"player.wall",		-- acesso ao /wall (ver todos jogadores, id, vida, colete etc.)
+		"mqcu.permissao", 	-- acesso ao /mqcu (deletar props/npcs/veiculos)
+		"admin.permissao",
+		'off-moderador.permissao'
+	},
+
+	['suporte'] = {
+		_config = {
+			title = 'Suporte',
+			gtype = 'staff'
+		},
+		"player.blips",
+		"player.noclip",
+		"player.teleport",
+		"player.secret",
+		"player.spec",		-- acesso ao /spec id (tela outros jogadores)
+		"player.wall",		-- acesso ao /wall (ver todos jogadores, id, vida, colete etc.)
+		"mqcu.permissao", 	-- acesso ao /mqcu (deletar props/npcs/veiculos)
+		'suporte.permissao'
+	},
+	['off-suporte'] = {
+		_config = {
+			title = 'Suporte',
+			gtype = 'staff'
+		},
+		"player.blips",
+		"player.noclip",
+		"player.teleport",
+		"player.secret",
+		"player.spec",		-- acesso ao /spec id (tela outros jogadores)
+		"player.wall",		-- acesso ao /wall (ver todos jogadores, id, vida, colete etc.)
+		"mqcu.permissao", 	-- acesso ao /mqcu (deletar props/npcs/veiculos)
+		'off-suporte.permissao'
+	},
+
+	['aprovador-wl'] = {
+		_config = {
+			title = 'Aprovador WL',
+			gtype = 'staff'
+		},
+		'aprovador-wl.permissao'
+	},
+	
+	------- JUIZ
+	['justica'] = {
+		_config = {
+			title = 'justica',
+			gtype = 'primario'
+		},
+		'justica.permissao'
+	},
+	
+	['juiz'] = {
+		_config = {
+			title = 'Juiz(a)',
+			gtype = 'primario'
+		},
+		'juiz.permissao'
+	},
+	['procurador'] = {
+		_config = {
+			title = 'Procurador(a)',
+			gtype = 'primario'
+		},
+		'procurador.permissao'
+	},
+	['promotor'] = {
+		_config = {
+			title = 'Promotor(a)',
+			gtype = 'primario'
+		},
+		'promotor.permissao'
+	},
+	['defensor'] = {
+		_config = {
+			title = 'Defensor(a) Público',
+			gtype = 'primario'
+		},
+		'defensor.permissao'
+	},
+	['advogado'] = {
+		_config = {
+			title = 'Advogado(a)',
+			gtype = 'primario'
+		},
+		'advogado.permissao'
+	},
+
+	
+	['defensor-secundario'] = {
+		_config = {
+			title = 'Defensor(a) Público',
+			gtype = 'primario'
+		},
+		'defensor.permissao'
+	},
+	---===========================================
+	--Policia PMESP -=====
+	---===========================================
+	['recruta'] = {
+		_config = {
+			title = 'Recruta PMDC',
+			gtype = 'primario'
+		},
+		'policia.permissao',
+		'policiaservico.permissao',
+		'policiaservico.permissao',
+		'recruta.permissao'
+	},
+	['paisana-recruta'] = {
+		_config = {
+			title = 'A PAISANA recruta',
+			gtype = 'primario'
+		},
+		'paisana-policia.permissao',
+		'policiapainasa.permissao',
+		'policiaservico.permissao',
+		'paisana-policiaservico.permissao',
+		'paisana-recruta.permissao'
+
+	},
+	['Soldado'] = {
+		_config = {
+			title = 'Soldado PMDC',
+			gtype = 'primario'
+		},
+		'policia.permissao',
+		'policiaservico.permissao',
+		'policiaservico.permissao',
+		'soldado.permissao'
+	},
+
+	['paisana-soldado'] = {
+		_config = {
+			title = 'Soldado PMDC',
+			gtype = 'primario'
+		},
+		'paisana-soldado.permissao',
+		'policiaservico.permissao',
+		'paisana-policiaservico.permissao',
+		'policia-patrulha.permissao'
+	},
+
+
+	['Sargento'] = {
+		_config = {
+			title = 'Sargento PMDC',
+			gtype = 'primario'
+		},
+		'sargento.permissao',
+		'policia.permissao',
+		'policiaservico.permissao',
+		'policiaservico.permissao',
+		'chefe-policia.permissao'
+	},
+	['paisana-Sargento'] = {
+		_config = {
+			title = 'Sargento PMDC',
+			gtype = 'primario'
+		},
+		'paisana-sargento.permissao',
+		'policiaservico.permissao',
+		'paisana-policiaservico.permissao',
+		'policia-patrulha.permissao'
+	},
+	['Tenente'] = {
+		_config = {
+			title = 'Tenente PMDC',
+			gtype = 'primario'
+		},
+		'tenente.permissao',
+		'policiaservico.permissao',
+		'policiaservico.permissao',
+		'paisana-policiaservico.permissao',
+		'policia.permissao'
+	},
+	['paisana-Tenente'] = {
+		_config = {
+			title = 'Tenente PMDC',
+			gtype = 'primario'
+		},
+		'paisana-tenente.permissao',
+		'policiaservico.permissao',
+		'paisana-policiaservico.permissao',
+		'policia-patrulha.permissao'
+	},
+	['capitao'] = {
+		_config = {
+			title = 'Capitão PMDC',
+			gtype = 'primario'
+		},
+		'policia.permissao',
+		'policiaservico.permissao',
+		'policiaservico.permissao',
+		'capitao.permissao'
+	},
+	['paisana-capitao'] = {
+		_config = {
+			title = 'capitao PMDC',
+			gtype = 'primario'
+		},
+		'paisana-capitao.permissao',
+		'policiaservico.permissao',
+		'paisana-policiaservico.permissao',
+		'policia-patrulha.permissao'
+	},
+	['major'] = {
+		_config = {
+			title = 'major PMDC',
+			gtype = 'primario'
+		},
+		'policia.permissao',
+		'policiaservico.permissao',
+		'policiaservico.permissao',
+		'major.permissao'
+	},
+	['paisana-major'] = {
+		_config = {
+			title = 'major PMDC',
+			gtype = 'primario'
+		},
+		'paisana-major.permissao',
+		'paisana-policiaservico.permissao',
+		'policiaservico.permissao',
+		'policia-patrulha.permissao'
+	},
+	['Tenente-coronel'] = {
+		_config = {
+			title = 'Tenente-coronel PMDC',
+			gtype = 'primario'
+		},
+		'tenente-coronel.permissao',
+		'policiaservico.permissao',
+		'policiaservico.permissao',
+		'policia.permissao',
+		'contratar.permissao'
+	},
+	['paisana-Tenente-coronel'] = {
+		_config = {
+			title = 'paisana-Tenente-coronel PM',
+			gtype = 'primario'
+		},
+		'paisana-Tenente-coronel.permissao',
+		'policiaservico.permissao',
+		'paisana-policiaservico.permissao',
+		'policia-patrulha.permissao'
+	},
+	['coronel'] = {
+		_config = {
+			title = 'coronel PMDC',
+			gtype = 'primario'
+		},
+		'coronel.permissao',
+		'policiaservico.permissao',
+		'policiaservico.permissao',
+		'policia.permissao',
+		'contratar.permissao'
+	},
+	['paisana-coronel'] = {
+		_config = {
+			title = 'paisana-coronel PM',
+			gtype = 'primario'
+		},
+		'paisana-coronel-coronel.permissao',
+		'policiaservico.permissao',
+		'paisana-policiaservico.permissao',
+		'policia-patrulha.permissao'
+	},
+
+	---===========================================
+	--Policia EB -=====
+	---===========================================
+	['Recruta-eb'] = {
+		_config = {
+			title = 'Recruta-eb',
+			gtype = 'primario'
+		},
+		'policia.permissao',
+		'policiaservico.permissao',
+		'Recrutaeb.permissao',
+		'policia.permissao'
+	},
+	['paisana-Recruta-eb'] = {
+		_config = {
+			title = 'paisana Recruta-eb',
+			gtype = 'primario'
+		},
+		'paisana-policiaservico.permissao',
+		'policiaservico.permissao',
+		'paisana-Recrutaeb.permissao'
+	},
+
+	['sargento-eb'] = {
+		_config = {
+			title = 'sargento-eb',
+			gtype = 'primario'
+		},
+		'policia.permissao',
+		'policiaservico.permissao',
+		'sargento-eb.permissao',
+		'policia.permissao'
+	},
+	['paisana-sargento-eb'] = {
+		_config = {
+			title = 'paisana sargento-eb',
+			gtype = 'primario'
+		},
+		'paisana-policiaservico.permissao',
+		'policiaservico.permissao',
+		'paisana-sargento-eb.permissao'
+	},
+	['capitao-eb'] = {
+		_config = {
+			title = 'capitao-eb',
+			gtype = 'primario'
+		},
+		'policia.permissao',
+		'policiaservico.permissao',
+		'capitao-eb.permissao',
+		'policia.permissao'
+	},
+	['paisana-capitao-eb'] = {
+		_config = {
+			title = 'paisana capitao-eb',
+			gtype = 'primario'
+		},
+		'paisana-policiaservico.permissao',
+		'policiaservico.permissao',
+		'paisana-capitao-eb.permissao'
+	},
+	['coronel-eb'] = {
+		_config = {
+			title = 'coronel-eb',
+			gtype = 'primario'
+		},
+		'policia.permissao',
+		'policiaservico.permissao',
+		'coronel-eb.permissao',
+		'contratar.permissao',
+		'policiaservico.permissao',
+		'policia.permissao'
+	},
+	['paisana-coronel-eb'] = {
+		_config = {
+			title = 'paisana coronel-eb',
+			gtype = 'primario'
+		},
+		'paisana-coronel-eb.permissao',
+		'policiaservico.permissao',
+		'paisana-policiaservico.permissao'
+	},
+	--======================
+	-----HOSPITAL	
+    --======================
+	['diretor-geral'] = {
+		_config = {
+			title = 'Diretor Geral',
+			gtype = 'primario'
+		},
+		'paramedico.permissao',
+		'diretor-geral.permissao',
+		'ems.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao',
+		'contratar.permissao'
+	},
+	['paisana-diretor-geral'] = {
+		_config = {
+			title = 'paisana Diretor-geral',
+			gtype = 'primario'
+		},
+		'paisana-diretor-geral.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao'
+	},
+	['medico'] = {
+		_config = {
+			title = 'Médico',
+			gtype = 'primario'
+		},
+		'ems.permissao',
+		'paramedico.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao',
+		'medico.permissao'
+	},
+	['paisana-medico'] = {
+		_config = {
+			title = 'paisana medico',
+			gtype = 'primario'
+		},
+		'paisana-medico.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao'
+	},
+	['paramedico'] = {
+		_config = {
+			title = 'Paramédico',
+			gtype = 'primario'
+		},
+		'paramedico.permissao',
+		'ems.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao',
+		'paramedico.permissao'
+	},
+	['paisana-paramedico'] = {
+		_config = {
+			title = 'paisana paramedico',
+			gtype = 'primario'
+		},
+		'paisana-paramedico.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao'
+	},
+	
+	['residente'] = {
+		_config = {
+			title = 'Residente',
+			gtype = 'primario'
+		},
+		'paramedico.permissao',
+		'ems.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao',
+		'residente.permissao'
+	},
+	['paisana-residente'] = {
+		_config = {
+			title = 'paisana residente',
+			gtype = 'primario'
+		},
+		'paisana-residente.permissao',
+		'policiaservico.permissao'
+	},
+	['socorrista'] = {
+		_config = {
+			title = 'Socorrista',
+			gtype = 'primario'
+		},
+		'paramedico.permissao',
+		'ems.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao',
+		'socorrista.permissao'
+	},
+	['paisana-socorrista'] = {
+		_config = {
+			title = 'paisana socorrista',
+			gtype = 'primario'
+		},
+		'paisana-socorrista.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao'
+	},
+	['estagiario'] = {
+		_config = {
+			title = 'Estágiario',
+			gtype = 'primario'
+		},
+		'paramedico.permissao',
+		'ems.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao',
+		'estagiario.permissao'
+	},
+	['paisana-estagiario'] = {
+		_config = {
+			title = 'paisana estagiario',
+			gtype = 'primario'
+		},
+		'paisana-estagiario.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao'
+	},
+
+	['liderbombeiro'] = {
+		_config = {
+			title = 'Comando Bombeiro',
+			gtype = 'primario'
+		},
+		'liderbombeiro.permissao',
+		'bombeiro.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao',
+		'ems.permissao',
+		'contratar.permissao'
+	},
+	['paisana-liderbombeiro'] = {
+		_config = {
+			title = 'paisana liderbombeiro',
+			gtype = 'primario'
+		},
+		'paisana-bombeiro.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao',
+		'paisana-liderbombeiro.permissao'
+	},
+	['bombeiro'] = {
+		_config = {
+			title = 'Bombeiro',
+			gtype = 'primario'
+		},
+		'bombeiro.permissao',
+		'bombeiro.permissao',
+		'policiaservico.permissao',
+		'ems.permissao',
+		'hpservico.permissao',
+		'contratar.permissao'
+	},
+	['paisana-bombeiro'] = {
+		_config = {
+			title = 'paisana bombeiro',
+			gtype = 'primario'
+		},
+		'paisana-bombeiro.permissao',
+		'policiaservico.permissao',
+		'hpservico.permissao'
+	},
+
+
+		--======================
+	-- restaurante
+	--======================
+	['liderrestaurante'] = {
+		_config = {
+			title = 'Lider restaurante Dash',
+			gtype = 'primario'
+		},
+		'restaurante.permissao',
+		'liderrestaurante.permissao',
+		'policiaservico.permissao'
+	},
+	['paisanaliderrestaurante'] = {
+		_config = {
+			title = 'restaurante dash de folga',
+			gtype = 'primario'
+		},
+		'paisana-restaurante.permissao',
+		'policiaservico.permissao',
+		"paisana-liderrestaurante.permissao"
+    },
+	['restaurante'] = {
+		_config = {
+			title = 'Restaurante Dash',
+			gtype = 'primario'
+		},
+		'restaurante.permissao',
+		'policiaservico.permissao'
+	},
+	['paisanarestaurante'] = {
+		_config = {
+			title = 'restaurante dash de folga',
+			gtype = 'primario'
+		},
+		'policiaservico.permissao',
+		'paisana-restaurante.permissao'
+    },
+
+
+	--======================
+	-- Mecanico
+	--======================
+	['lidermecanico'] = {
+		_config = {
+			title = 'Bennys',
+			gtype = 'primario'
+		},
+		'mecanico.permissao',
+		'lidermecanico.permissao',
+		'policiaservico.permissao',
+		'bennys.permissao',
+		'lscustoms.permissao'
+	},
+	['paisana-lidermecanico'] = {
+		_config = {
+			title = 'Mecânico de folga',
+			gtype = 'primario'
+		},
+		'paisana-mecanico.permissao',
+		'policiaservico.permissao',
+		"paisana-lidermecanico.permissao"
+    },
+	['mecanico'] = {
+		_config = {
+			title = 'Bennys',
+			gtype = 'primario'
+		},
+		'mecanico.permissao',
+		'policiaservico.permissao',
+		'bennys.permissao',
+		'lscustoms.permissao'
+	},
+	['paisana-mecanico'] = {
+		_config = {
+			title = 'Mecânico de folga',
+			gtype = 'primario'
+		},
+		'policiaservico.permissao',
+		'paisana-mecanico.permissao'
+    },
+
+	--======== GUETOS ===================
+	['canada-lider'] = { --muniçao
+	_config = {
+		title = 'TDC-lider',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'ballas.permissao',
+	'canada.permissao',
+	'contratar.permissao',
+	'lockpick.permissao'
+},
+	['canada'] = { --muniçao
+		_config = {
+			title = 'TDC',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'canada.permissao',
+		'ballas.permissao',
+		'lockpick.permissao'
+	},
+	['tdl-lider'] = { --ilegal
+		_config = {
+			title = 'T.D.L-lider',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'vagos.permissao',
+		'tdl.permissao',
+		'contratar.permissao',
+		'lockpick.permissao'
+	},
+	['tdl'] = {
+		_config = {
+			title = 'T.D.L',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'tdl.permissao',
+		'vagos.permissao',
+		'lockpick.permissao'
+	},
+	['Motoclub-lider'] = {
+		_config = {
+			title = 'Motoclub-lider',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'groove.permissao',
+		'contratar.permissao',
+		'motoclub.permissao',
+		'lockpick.permissao'
+	},
+	['Motoclub'] = {
+		_config = {
+			title = 'Motoclub',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'groove.permissao',
+		'motoclub.permissao',
+		'lockpick.permissao'
+	},
+	---- =========== FAVELUDAS ================
+	['lidercv'] = { --Drogas Helipa
+		_config = {
+			title = 'Lider surfista',
+			gtype = 'primario'
+		},
+		'lidervermelhos.permissao',
+		'ilegal.permissao',
+		'vermelhos.permissao',
+		'cv.permissao',
+		'turquia.permissao',
+		'contratar.permissao'
+	     
+	},
+	
+	['cv'] = { --Drogas Helipa
+		_config = {
+			title = 'surfista',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'vermelhos.permissao',
+		'turquia.permissao'
+	},
+	['pcc-lider'] = { --Drogas lago
+	_config = {
+		title = 'pcc-lider',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'cinza.permissao',
+	'pcc.permissao',
+	'contratar.permissao'
+},
+	['pcc'] = { --Drogas lago
+	_config = {
+		title = 'pcc',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'pcc.permissao',
+	'cinza.permissao',
+},
+	['tcp-lider'] = { --Drogas lago
+	_config = {
+		title = 'tdr-lider',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'tcp.permissao',
+	'roxos.permissao',
+	'contratar.permissao'
+	},
+	['tcp'] = { --Drogas lago
+	_config = {
+		title = 'tdr',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'tcp.permissao',
+	'roxos.permissao'
+	},
+	['ada-lider'] = { --Drogas  -- observatorio
+	_config = {
+		title = 'ada-lider',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'ada.permissao',
+	'verdes.permissao',
+	'contratar.permissao',
+	'israel.permissao'
+},
+	['ada'] = { --Drogas  -- observatorio
+		_config = {
+			title = 'ada',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'ada.permissao',
+		'verdes.permissao',
+		'israel.permissao'
+	},
+	['cartel-lider'] = { --Drogas  esgoto
+	_config = {
+		title = 'cartel-lider',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'contratar.permissao',
+	'cartel.permissao',
+	'azul.permissao'
+},
+	['cartel'] = { --Drogas  esgoto
+		_config = {
+			title = 'cartel',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'cartel.permissao',
+		'azul.permissao'
+	},
+
+	------===== LAVAGEM ===========
+	-- BARES
+	['Vanilla-lider'] = {  --Lavagem
+	_config = {
+		title = 'Cassino-lider',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'contratar.permissao',
+	'vanilla.permissao'
+},
+	['Vanilla'] = {  --Lavagem
+		_config = {
+			title = 'Cassino',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'vanilla.permissao'
+	},
+	['Bahamas-lider'] = { --Lavagem
+	_config = {
+		title = 'Bahamas-lider',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'contratar.permissao',
+	'bahamas.permissao'
+},
+	['Bahamas'] = { --Lavagem
+		_config = {
+			title = 'Bahamas',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'bahamas.permissao'
+	},
+---========== ARMAS  --===============
+	--ORGS
+	['milicia-lider'] = { -- armas
+	_config = {
+		title = 'milicia-lider',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'contratar.permissao',
+	'milicialider.permissao',
+	'milicia.permissao'
+},
+	['milicia'] = { -- armas
+		_config = {
+			title = 'milicia',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'milicia.permissao'
+	},
+	['Yakuza-lider'] = { -- armas
+	_config = {
+		title = 'Yakuza-lider',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'contratar.permissao',
+	'yakuzalider.permissao',
+	'yakuza.permissao'
+},
+	['Yakuza'] = { -- armas
+		_config = {
+			title = 'Yakuza',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'yakuza.permissao'
+	},
+	['furious-lider'] = { -- desmanche
+	_config = {
+		title = 'furious lider',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'contratar.permissao',
+	'furiouslider.permissao',
+	'desmanche.permissao',
+	'furious.permissao'
+},
+	['furious'] = { -- desmanche
+		_config = {
+			title = 'furious',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'desmanche.permissao',
+		'furious.permissao'
+	},
+	['dk-lider'] = { -- desmanche
+	_config = {
+		title = 'Drift king lider',
+		gtype = 'primario'
+	},
+	'ilegal.permissao',
+	'contratar.permissao',
+	'desmanche.permissao',
+	'dklider.permissao',
+	'dk.permissao'
+},
+	['dk'] = { -- desmanche
+		_config = {
+			title = 'Drift king',
+			gtype = 'primario'
+		},
+		'ilegal.permissao',
+		'desmanche.permissao',
+		'dk.permissao'
+	},
+
+	--VIPS
+	["Bronze"] = {
+		_config = {
+			title = 'Vip Bronze',
+			gtype = 'vip'
+		},
+		"bronze.permissao"
+	},
+	["Prata"] = {
+		_config = {
+			title = 'Vip Prata',
+			gtype = 'vip'
+		},
+		"prata.permissao",
+		"roupas.permissao"
+	},
+	["Ouro"] = {
+		_config = {
+			title = 'Vip Ouro',
+			gtype = 'vip'
+		},
+		"gold.permissao",
+		"taxacarro.permissao",
+		"roupas.permissao"
+	},
+	["streamer"] = {
+		_config = {
+			title = 'STREAMER',
+			gtype = 'vip'
+		},
+		"streamer.permissao",
+		"roupas.permissao"
+	},
+	["Platina"] = {
+		_config = {
+			title = 'Vip Platina',
+			gtype = 'vip'
+		},
+		"platina.permissao",
+		"taxacarro.permissao",
+		"garagemvip.permissao",
+		"roupas.permissao"
+	},
+	["Diamante"] = {
+		_config = {
+			title = 'Vip Diamante',
+			gtype = 'vip'
+		}, 
+		"diamante.permissao",
+		"taxacarro.permissao",
+		"garagemvip.permissao",
+		"roupas.permissao"
+	},
+	["Dash"] = {
+		_config = {
+			title = 'Vip Dash',
+			gtype = 'vip'
+		},
+		"miami.permissao",
+		"taxacarro.permissao",
+		"garagemvip.permissao",
+		"roupas.permissao"
+	},
+}
+
+return groups
